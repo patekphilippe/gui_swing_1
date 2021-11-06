@@ -68,7 +68,13 @@ public class MainWindow extends JFrame {
     }
 
     private void doFileOpen() {
-        fileChooser.showOpenDialog(null);//okno pojawi się na środku ekranu
+        int result = fileChooser.showOpenDialog(null);//okno pojawi się na środku ekranu
+        if(result==JFileChooser.APPROVE_OPTION) {
+            JOptionPane.showMessageDialog(fileChooser,
+                    String.format("Wybrano plik: %s",fileChooser.getSelectedFile()),
+                    "Wybór",
+                    JOptionPane.INFORMATION_MESSAGE);
+        }
     }
 
     private void doFileSave() {
