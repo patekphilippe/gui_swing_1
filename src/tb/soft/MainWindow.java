@@ -10,7 +10,7 @@ import java.awt.event.ActionListener;
  */
 public class MainWindow extends JFrame {
     public static void main(String[] args) {
-		SwingUtilities.invokeLater(new Runnable() {
+        SwingUtilities.invokeLater(new Runnable() {
             public void run() {
                 try {
                     MainWindow window = new MainWindow();
@@ -31,32 +31,19 @@ public class MainWindow extends JFrame {
         super(title);
 
         setBounds(100, 100, 450, 300);
-//        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //program ma się zakończyć po zamknięciu tego okna
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //program ma się zakończyć po zamknięciu tego okna
 
         JMenuBar menuBar = new JMenuBar();
         setJMenuBar(menuBar);
 
-        JMenu mnDo = new JMenu("Do");
-        menuBar.add(mnDo);
+        JMenu mnFile = new JMenu("File");
+        menuBar.add(mnFile);
 
-        JMenuItem mnitDo = new JMenuItem("Work");
-        mnitDo.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                doWork();
-            }
-        });
-        mnDo.add(mnitDo);
+        JMenuItem mnitOpen = new JMenuItem("Open");
+        mnFile.add(mnitOpen);
 
-    }
+        JMenuItem mnitSave = new JMenuItem("Save");
+        mnFile.add(mnitSave);
 
-    /**
-     * metoda nie robi nic, ale za to długo
-     */
-    private void doWork() {
-        for (int i = 0; i < 5; i++)
-            for (int j = 0; j < Integer.MAX_VALUE; j++)
-                for (int k = 0; k < Integer.MAX_VALUE; k++)
-                    ;
     }
 }
