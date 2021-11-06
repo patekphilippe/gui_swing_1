@@ -4,6 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
 
 /**
  * klasa główna zawierająca metodę statyczną main
@@ -58,12 +60,14 @@ public class MainWindow extends JFrame {
                 doFileOpen();
             }
         });
+        mnitOpen.setMnemonic(KeyEvent.VK_O);//można też po prostu 'O'
         mnFile.add(mnitOpen);
 
         JMenuItem mnitSave = new JMenuItem("Save");
         mnitSave.addActionListener(e -> {
             doFileSave();
         });
+        mnitSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
         mnFile.add(mnitSave);
     }
 
