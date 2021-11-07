@@ -2,7 +2,11 @@ package tb.soft;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 /**
  * klasa główna zawierająca metodę statyczną main
@@ -40,5 +44,32 @@ public class MainWindow extends JFrame {
         MyPanel panel = new MyPanel();
         panel.setBounds(10, 11, 569, 353);
         contentPane.add(panel);
+
+        JSlider poziom = new JSlider();
+        poziom.setPaintTicks(true);
+        poziom.setMajorTickSpacing(10);
+        poziom.setBounds(10, 375, 569, 25);
+        poziom.setMinimum(0);
+        poziom.setMaximum(panel.getWidth());
+        contentPane.add(poziom);
+
+        JSlider pion = new JSlider();
+        pion.setPaintTicks(true);
+        pion.setMajorTickSpacing(10);
+        pion.setOrientation(SwingConstants.VERTICAL);
+        pion.setBounds(600, 11, 25, 353);
+        pion.setMinimum(0);
+        pion.setMaximum(panel.getHeight());
+        contentPane.add(pion);
+
+        JButton pokBtn = new JButton("Ukryj");
+        JButton dodBtn = new JButton("Dodaj");
+
+        pokBtn.setBounds(10, 417, 90, 23);
+        pokBtn.setEnabled(false);
+        contentPane.add(pokBtn);
+
+        dodBtn.setBounds(105, 417, 90, 23);
+        contentPane.add(dodBtn);
     }
 }
