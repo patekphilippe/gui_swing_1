@@ -1,1 +1,2 @@
-0 - program "hello" - konsolowy
+0. program "hello" - konsolowy
+1. puste okno JFrame
