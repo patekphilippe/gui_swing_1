@@ -37,5 +37,8 @@ public class MainWindow extends JFrame {
         setContentPane(contentPane);
         contentPane.setLayout(null);
 
+        MyPanel panel = new MyPanel();
+        panel.setBounds(10, 11, 569, 353);
+        contentPane.add(panel);
     }
 }
