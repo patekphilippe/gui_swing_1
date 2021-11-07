@@ -5,6 +5,8 @@ import javax.swing.border.LineBorder;
 import java.awt.*;
 
 public class MyPanel extends JPanel {
+
+	private final JLabel lblCoords;
 	private boolean rysuj = true;
 	Sprajt sp = null;
 
@@ -43,7 +45,11 @@ public class MyPanel extends JPanel {
 		setBorder(new LineBorder(new Color(0, 0, 0), 4, true));
 		setBackground(Color.ORANGE);
 		setLayout(null);
+		setCursor(Cursor.getPredefinedCursor(Cursor.CROSSHAIR_CURSOR));
 
+		lblCoords = new JLabel("x, y");
+		lblCoords.setBounds(10, 10, 60, 15);
+		add(lblCoords);
 	}
 
 	/* (non-Javadoc)
@@ -54,10 +60,12 @@ public class MyPanel extends JPanel {
 		super.paintComponent(g);
 		Graphics2D g2d = (Graphics2D) g.create();
 		try {
+			lblCoords.setVisible(isRysuj());
 			if(! isRysuj()) return;
 			if(sp == null) return;
 			g2d.setColor(Color.BLUE);
 			sp.draw(g2d);
+			lblCoords.setText(String.format("%d, %d", sp.getX(),sp.getY()));
 		} finally {
 			g2d.dispose();
 		}
