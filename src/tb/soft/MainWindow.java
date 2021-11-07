@@ -51,6 +51,14 @@ public class MainWindow extends JFrame {
         poziom.setBounds(10, 375, 569, 25);
         poziom.setMinimum(0);
         poziom.setMaximum(panel.getWidth());
+        poziom.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                if(panel.hasSprajt()) {
+                    panel.sp.setX(poziom.getValue());
+                    panel.repaint();
+                }
+            }
+        });
         contentPane.add(poziom);
 
         JSlider pion = new JSlider();
@@ -60,6 +68,14 @@ public class MainWindow extends JFrame {
         pion.setBounds(600, 11, 25, 353);
         pion.setMinimum(0);
         pion.setMaximum(panel.getHeight());
+        pion.addChangeListener(new ChangeListener() {
+            public void stateChanged(ChangeEvent e) {
+                if(panel.hasSprajt()) {
+                    panel.sp.setY(pion.getMaximum() - pion.getValue());
+                    panel.repaint();
+                }
+            }
+        });
         contentPane.add(pion);
 
         JButton pokBtn = new JButton("Ukryj");
