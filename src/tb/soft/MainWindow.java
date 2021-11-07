@@ -65,10 +65,31 @@ public class MainWindow extends JFrame {
         JButton pokBtn = new JButton("Ukryj");
         JButton dodBtn = new JButton("Dodaj");
 
+        pokBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                if (panel.isRysuj()) {
+                    panel.setRysuj(false);
+                    pokBtn.setText("Pokaż");
+                    pokBtn.setToolTipText("Pokaż rysowany element");
+                } else {
+                    panel.setRysuj(true);
+                    pokBtn.setText("Ukryj");
+                    pokBtn.setToolTipText("Ukryj rysowany element");
+                }
+                panel.repaint();
+            }
+        });
         pokBtn.setBounds(10, 417, 90, 23);
         pokBtn.setEnabled(false);
         contentPane.add(pokBtn);
 
+        dodBtn.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent e) {
+                pokBtn.setEnabled(true);
+                panel.addSprajt(new Pilka(poziom.getValue(), pion.getMaximum() - pion.getValue()));
+                panel.repaint();
+            }
+        });
         dodBtn.setBounds(105, 417, 90, 23);
         contentPane.add(dodBtn);
     }
