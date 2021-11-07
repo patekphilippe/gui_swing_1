@@ -7,3 +7,4 @@
 6. dodane suwaki i przyciski (na razie też tylko wygląd)
 7. dodane _listener_'y do przycisków
 8. dodane definicje zachowania suwaków
+9. dodanie etykiety wypisującej współrzędne
