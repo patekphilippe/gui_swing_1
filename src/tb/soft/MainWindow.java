@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.net.URL;
 
 /**
  * klasa główna zawierająca metodę statyczną main
@@ -69,6 +70,26 @@ public class MainWindow extends JFrame {
         });
         mnitSave.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_DOWN_MASK));
         mnFile.add(mnitSave);
+
+        JToolBar toolBar = new JToolBar();
+        getContentPane().add(toolBar, BorderLayout.NORTH);
+
+        JButton btnOpenFileButton = new JButton("Open");
+        btnOpenFileButton.setMnemonic(KeyEvent.VK_O);
+        btnOpenFileButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                doFileOpen();
+            }
+        });
+        toolBar.add(btnOpenFileButton);
+
+        JButton btnSaveFileButton = new JButton("Save");
+        btnSaveFileButton.addActionListener(e -> {
+            doFileSave();
+        });
+        toolBar.add(btnSaveFileButton);
+
     }
 
     private void doFileOpen() {

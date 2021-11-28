@@ -4,3 +4,4 @@
 3. reakcja na wybranie pozycji z menu
 4. wyświetlanie panelu informacyjnego
 5. mnemonik i akcelerator
+6. toolbar
