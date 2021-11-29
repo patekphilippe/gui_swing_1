@@ -76,6 +76,8 @@ public class MainWindow extends JFrame {
 
         JButton btnOpenFileButton = new JButton("Open");
         btnOpenFileButton.setMnemonic(KeyEvent.VK_O);
+        URL FOiconURL = getClass().getResource("/icons/FOpen.png");
+        btnOpenFileButton.setIcon(new ImageIcon(FOiconURL));
         btnOpenFileButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -85,6 +87,8 @@ public class MainWindow extends JFrame {
         toolBar.add(btnOpenFileButton);
 
         JButton btnSaveFileButton = new JButton("Save");
+        URL FSiconURL = getClass().getResource("/icons/FSave.gif");
+        btnSaveFileButton.setIcon(new ImageIcon(FSiconURL));
         btnSaveFileButton.addActionListener(e -> {
             doFileSave();
         });

@@ -5,3 +5,4 @@
 4. wyświetlanie panelu informacyjnego
 5. mnemonik i akcelerator
 6. toolbar
+7. ikony klawiszy
