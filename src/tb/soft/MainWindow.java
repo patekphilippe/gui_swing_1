@@ -8,7 +8,7 @@ import java.util.Arrays;
 /**
  * klasa główna zawierająca metodę statyczną main
  */
-public class MainWindow extends JFrame implements ActionListener{
+public class MainWindow extends JFrame{
 
     JButton tclearButton;
     JButton clearButton;
@@ -136,25 +136,6 @@ public class MainWindow extends JFrame implements ActionListener{
             getContentPane().setBackground(myGreen);
         } else {
             getContentPane().setBackground(myRed);
-        }
-    }
-
-    @Override
-    public void actionPerformed(ActionEvent ae){
-        if(ae.getSource() == loginButton || ae.getSource() == tloginButton ) {
-            currentUser = userField.getText();
-            currentPassword = new String(passwordField.getPassword());
-
-             if(myDataBase.checkIfUserExists(currentUser,currentPassword)) {
-                 getContentPane().setBackground(myGreen);
-             } else {
-                 getContentPane().setBackground(myRed);
-             }
-        }
-        if(ae.getSource() == clearButton || ae.getSource() == tclearButton ) {
-            getContentPane().setBackground(myGray);
-            userField.setText("");
-            passwordField.setText("");
         }
     }
 }
