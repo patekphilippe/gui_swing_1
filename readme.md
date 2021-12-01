@@ -9,5 +9,6 @@ Klasa UserDataBase zawiera bazę danych z użytkownikami
 "test3", "haslo3"
 
 "test4", "haslo1"
+
 Klasa MainWindow
 Zawiera funkcje main oraz metody do tworzenia GUI 
